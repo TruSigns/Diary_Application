@@ -2,6 +2,7 @@ import { useState } from "react";
 import { usePosts } from "./usePosts";
 import EntryForm from "./EntryForm";
 import PostList from "./PostList";
+import Fireflies from "./FireFlies";
 import "./Diary.css";
 
 export default function Diary() {
@@ -26,6 +27,7 @@ export default function Diary() {
 
   return (
     <div className="notebook">
+      <Fireflies />
       <div className="spine" aria-hidden="true"></div>
 
       <div className="notebook-content">
