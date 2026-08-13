@@ -1,0 +1,260 @@
+.notebook {
+  min-height: 100vh;
+  display: flex;
+  background: #211f26;
+  color: #ede3d0;
+}
+
+.spine {
+  width: 28px;
+  flex-shrink: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    #c9a227 0px,
+    #c9a227 2px,
+    transparent 2px,
+    transparent 14px
+  );
+  background-color: #17151c;
+  box-shadow: inset -4px 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.notebook-content {
+  flex: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.notebook-header {
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #a23b3b;
+}
+
+.notebook-header h1 {
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 42px;
+  margin: 4px 0 0;
+  color: #f4ecd8;
+}
+
+.entry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #2b2833;
+  border: 1px solid #3b3560;
+  border-radius: 2px;
+}
+
+.entry-form input,
+.entry-form textarea {
+  font-family: "Lora", serif;
+  font-size: 15px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #3b3560;
+  color: #ede3d0;
+  padding: 8px 2px;
+  resize: vertical;
+}
+
+.entry-form input::placeholder,
+.entry-form textarea::placeholder {
+  color: #8a84a3;
+}
+
+.entry-form input:focus,
+.entry-form textarea:focus {
+  outline: none;
+  border-bottom-color: #c9a227;
+}
+
+.entry-form button {
+  align-self: flex-start;
+  margin-top: 6px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  background: #a23b3b;
+  color: #f4ecd8;
+  border: none;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.entry-form button:hover {
+  background: #b94848;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.entry-form button.cancel-edit {
+  align-self: flex-start;
+  margin-top: 6px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  background: transparent;
+  color: #8a84a3;
+  border: 1px solid #3b3560;
+  padding: 10px 18px;
+  cursor: pointer;
+}
+
+.entry-form button.cancel-edit:hover {
+  color: #ede3d0;
+  border-color: #c9a227;
+}
+
+.pages {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.empty {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  color: #8a84a3;
+}
+
+.page {
+  position: relative;
+  background: #ede3d0;
+  color: #2b2833;
+  padding: 22px 24px 22px 34px;
+  transform: rotate(var(--tilt));
+  clip-path: polygon(
+    0% 2%, 4% 0%, 12% 1.5%, 22% 0%, 33% 1%, 45% 0%, 58% 1.5%, 70% 0%,
+    82% 1%, 92% 0%, 100% 2%, 100% 100%, 0% 100%
+  );
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #a23b3b;
+  opacity: 0.5;
+}
+
+.page.editing {
+  outline: 2px solid #c9a227;
+  outline-offset: 3px;
+}
+
+.page-meta {
+  display: flex;
+  gap: 10px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: #6b6480;
+  margin-bottom: 6px;
+}
+
+.page h2 {
+  font-family: "Lora", serif;
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+
+.page p {
+  font-family: "Lora", serif;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.page-actions {
+  display: flex;
+  gap: 14px;
+}
+
+.page .edit {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  background: none;
+  border: none;
+  color: #6b6480;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.8;
+}
+
+.page .edit:hover {
+  opacity: 1;
+  color: #2b2833;
+  text-decoration: underline;
+}
+
+.page .remove {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  background: none;
+  border: none;
+  color: #a23b3b;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.7;
+}
+
+.page .remove:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.reactions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.react {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  background: rgba(43, 40, 51, 0.06);
+  border: 1px solid rgba(43, 40, 51, 0.15);
+  border-radius: 3px;
+  color: #2b2833;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.react:hover {
+  background: rgba(43, 40, 51, 0.12);
+  transform: translateY(-1px);
+}
+
+.react.like:hover {
+  border-color: #4a7c59;
+}
+
+.react.dislike:hover {
+  border-color: #a23b3b;
+}
