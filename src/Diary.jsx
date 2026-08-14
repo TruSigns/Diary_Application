@@ -2,11 +2,20 @@ import { useState } from "react";
 import { usePosts } from "./usePosts";
 import EntryForm from "./EntryForm";
 import PostList from "./PostList";
-import Fireflies from "./FireFlies";
+import Fireflies from "./Fireflies";
 import "./Diary.css";
 
 export default function Diary() {
-  const { posts, loading, reactions, addPost, updatePost, deletePost, likePost, dislikePost } = usePosts();
+  const {
+    posts,
+    loading,
+    reactions,
+    addPost,
+    updatePost,
+    deletePost,
+    likePost,
+    dislikePost,
+  } = usePosts();
   const [editingId, setEditingId] = useState(null);
 
   const editingPost = posts.find((p) => p.id === editingId) || null;
